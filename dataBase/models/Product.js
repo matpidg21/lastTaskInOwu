@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey: true
         },
         name_product: {
-            type: DataTypes.DOUBLE,
+            type: DataTypes.STRING,
             allowNull: false
         },
         price: {

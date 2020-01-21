@@ -9,4 +9,11 @@ router.post('/',
     productController.createProduct
 );
 
+router.delete('/:product_id/delete' ,
+    authMiddleware.checkAccessToken,
+    authMiddleware.getUserFromToken,
+    productController.deleteProduct
+);
+
+
 module.exports = router;
