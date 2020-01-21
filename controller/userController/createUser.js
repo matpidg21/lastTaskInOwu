@@ -1,8 +1,11 @@
 const {userService} = require('../../service');
+const {USER_ROLE_ENUM,USER_STATUS_ENUM} = require('../../constant');
 
 module.exports = async (req, res) => {
     try {
         const user = req.body;
+        user.role_id = USER_ROLE_ENUM.USER;
+        user.status_id = USER_STATUS_ENUM.ACTIVE;
 
 
         const sendUser = await userService.createUser(user);

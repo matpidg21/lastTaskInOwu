@@ -9,11 +9,9 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
 
+const {userRouter,authRouter,adminRouter} = require('./routes');
 
-
-
-const {userRouter,authRouter} = require('./routes');
-
+app.use('/admin',adminRouter);
 app.use('/auth', authRouter);
 app.use('/users', userRouter);
 
