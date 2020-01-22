@@ -15,5 +15,11 @@ router.delete('/:product_id/delete' ,
     productController.deleteProduct
 );
 
+router.delete('/:product_id/update' ,
+    authMiddleware.checkAccessToken,
+    authMiddleware.getUserFromToken,
+    productController.updateProduct
+);
+
 
 module.exports = router;

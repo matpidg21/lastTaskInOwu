@@ -7,9 +7,7 @@ module.exports = (updateObject, user_id) => {
     console.log(updateObject);
     try {
         UserModel.update(updateObject, {
-            where: {
-                id: user_id
-            },
+            where: user_id,
             returning: true
         })
     } catch (e) {

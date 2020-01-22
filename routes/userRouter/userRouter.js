@@ -10,6 +10,11 @@ router.put('/update',
     authMiddleware.getUserFromToken,
     userController.updateUser);
 
+router.put('/changePassword',
+    authMiddleware.checkAccessToken,
+    authMiddleware.getUserFromToken,
+    userController.chengePasswordUser);
+
 router.delete('/delete',
     authMiddleware.checkAccessToken,
     authMiddleware.getUserFromToken,

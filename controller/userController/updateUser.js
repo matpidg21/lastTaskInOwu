@@ -6,7 +6,7 @@ module.exports = async (req, res) => {
         const {user_id} = req.user;
 
         console.log(userUpdate);
-        await userService.updateUser(userUpdate, user_id);
+        await userService.updateUser(userUpdate, {id: user_id});
 
         res.send('Update User!')
 
