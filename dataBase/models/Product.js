@@ -14,7 +14,11 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         price: {
-            type: DataTypes.DOUBLE,
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        photo_name: {
+            type: DataTypes.STRING,
             allowNull: false
         },
         created_ad: {

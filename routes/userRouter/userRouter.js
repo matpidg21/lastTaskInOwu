@@ -20,4 +20,5 @@ router.delete('/delete',
     authMiddleware.getUserFromToken,
     userController.deleteUser);
 
+
 module.exports = router;

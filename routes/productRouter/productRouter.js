@@ -9,17 +9,19 @@ router.post('/',
     productController.createProduct
 );
 
-router.delete('/:product_id/delete' ,
+router.delete('/:product_id/delete',
     authMiddleware.checkAccessToken,
     authMiddleware.getUserFromToken,
     productController.deleteProduct
 );
 
-router.delete('/:product_id/update' ,
+router.put('/:product_id/update',
     authMiddleware.checkAccessToken,
     authMiddleware.getUserFromToken,
     productController.updateProduct
 );
+
+router.get('/allProduct', productController.getAllProduct);
 
 
 module.exports = router;

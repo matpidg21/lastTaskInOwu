@@ -2,9 +2,9 @@ const db = require('../../dataBase').getInstance();
 const {DB_TABLE_ENUM} = require('../../constant');
 
 module.exports = searchObject => {
-    const UserModel = db.getModel(DB_TABLE_ENUM.USER);
+    const ProductModel = db.getModel(DB_TABLE_ENUM.PRODUCT);
     try {
-        return UserModel.findOne({
+        return ProductModel.findOne({
             where: searchObject
         })
     } catch (e) {
