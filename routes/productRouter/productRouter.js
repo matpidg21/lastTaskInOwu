@@ -23,5 +23,7 @@ router.put('/:product_id/update',
 
 router.get('/allProduct', productController.getAllProduct);
 
+router.get('/filterProduct', productController.filterProduct);
+
 
 module.exports = router;

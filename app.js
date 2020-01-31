@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const cors = require('cors');
 
 const db = require('./dataBase').getInstance();
 db.setModels();
@@ -12,6 +13,7 @@ const busboyBodyParser = require('busboy-body-parser');
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(busboy());
+app.use(cors());
 app.use(busboyBodyParser());
 
 const {userRouter, authRouter, adminRouter, productRouter, orderRouter} = require('./routes');
